@@ -9,6 +9,14 @@
 // The program will allow the user to input the cards dealt and will update the count accordingly.
 // The program will also allow the user to reset the count and exit the program.
 
+// Betting Strategy:
+// The program will allow the user to specify a minimum and maximum bet.
+
+// The program will calculate the bet based on the true count and the minimum bet.
+// The bet will be adjusted based on the true count, with a maximum bet cap.
+// The program will display the current count and the bet to the user.
+// The program will also allow the user to reset the count and exit the program.
+
 int main() {
 
     std::cout << "Welcome to the Card Counting Program!" << std::endl;
@@ -88,6 +96,8 @@ int main() {
         } else if (trueCount >= 6) {
             betAdjustment = maxBet; // Bet maximum
         } else {
+            // Adjust the bet based on the true count and the minimum bet
+            // The bet is adjusted by the true count multiplied by the bet unit
             betAdjustment = minBet + (trueCount * betUnit); // Bet based on true count
             if (betAdjustment > maxBet) {
                 betAdjustment = maxBet; // Cap the bet at the maximum bet
